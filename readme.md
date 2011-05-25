@@ -1,5 +1,6 @@
 #jQuery.tooltip()
 Easy to use image-free HTML5 tooltips for jQuery 1.5.2+.
+
 * Automatically positions to avoid going off the screen.
 * Uses delgates and re-uses the tooltip chrome for extra optimization.
 * Works in all major browsers including IE6 and mobile.
@@ -18,20 +19,19 @@ Created by [Dylan Greene](http://http://github.com/dylang) for OPOWER.
 
 Put any of these attrbutes on a div, span, input, text area, etc to give it a tooltip.
 
-* `data-tooltip` This attribute is required. The value is an optional selector for the tip.
-* `data-tooltip-html` Optional HTML - only used if data-tooltip has no value.
-* `data-tooltip-style` Optional CSS class.  Defaults to a nice tip above.  `side` will show tips to the left or right of the element.
-* `data-tooltip-disable` Disables the tooltip.
-* `data-tooltip-offset` Pixel distance to show the tooltip from trigger. Defaults to 2px.
+* `data-tooltip`: This attribute is required. The value is an optional selector for the tip.
+* `data-tooltip-html`: Optional HTML - only used if data-tooltip has no value.
+* `data-tooltip-style`: Optional CSS class.  Defaults to a nice tip above.  `side` will show tips to the left or right of the element.
+* `data-tooltip-disable`: Disables the tooltip.
+* `data-tooltip-offset`: Pixel distance to show the tooltip from trigger. Defaults to 2px.
 
 ###More complex data attribute example
+
     <div data-tooltip data-tooltip-html="This is <strong>cool</strong>"
          data-tooltip-style="side"
          data-tootlip-offset="-10">
         Side will make the tooltip show to the side.  The negative offset will make it overlap a little.
     <div>
-
-
 
 ##Trigger Element
 
@@ -93,10 +93,10 @@ you could have used above.
 
     $(triggerElement).tooltip({attribute1: value1, attribute2: value2, etc..});
 
-* `selector` Optional selector or jquery object.
-* `html` Optional html if content is not used.
-* `style` Optional className.
-* `offset` Pixel distance from trigger
+* `selector`: Optional selector or jquery object.
+* `html`: Optional html if content is not used.
+* `style`: Optional className.
+* `offset`: Pixel distance from trigger
 
 Either selector or html is required, otherwise the tooltip will be empty.
 
