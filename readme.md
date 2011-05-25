@@ -24,7 +24,7 @@ Put any of these attrbutes on a div, span, input, text area, etc to give it a to
 * `data-tooltip-disable` Disables the tooltip.
 * `data-tooltip-offset` Pixel distance to show the tooltip from trigger. Defaults to 2px.
 
-##Another HTML5 Data attribute example
+###More complex data attribute example
     <div data-tooltip data-tooltip-html="This is <strong>cool</strong>"
          data-tooltip-style="side"
          data-tootlip-offset="-10">
@@ -36,14 +36,16 @@ Put any of these attrbutes on a div, span, input, text area, etc to give it a to
 
 ###jQuery API
 
-    $(triggerElement).tooltip({attribute1: value1, attribute2: value2, etc..});
-
 ####Attributes
+
+    $(triggerElement).tooltip({attribute1: value1, attribute2: value2, etc..});
 
 * `selector` Optional selector or jquery object.
 * `html` Optional html if content is not used.
 * `style` Optional className.
 * `offset` Pixel distance from trigger
+
+Either selector or html is required, otherwise the tooltip will be empty.
 
 ####Actions
 
@@ -61,9 +63,9 @@ Put any of these attrbutes on a div, span, input, text area, etc to give it a to
 * It will hide the tooltip on `mouseleave` and `blur` - unless the tooltip itself has `mouseenter` or `focus`.
 * The trigger element always have the class `highlight` while the tooltip is visible.
 
-##Tooltip Content
+##Tooltip Selector
 
-Tooltip content can come from within the trigger or elsewhere on the page.
+The css selector for the tooltip content can point to a child element of the trigger or somewhere else on the page.
 
     <!DOCTYPE html>
     <html>
@@ -96,14 +98,11 @@ Tooltip content can come from within the trigger or elsewhere on the page.
 CSS is included for the graphics-free tooltip.  It can be easily modifed.
 
 ##Compatiblity
-Works with every modern browser as well as IE6.
+
+This works with every modern browser as well as IE6.
 
 * Chrome
 * Safari
 * Firefox
 * Internet Explorer 6 - 10
 * iPhone/Android
-
-#License
-
-TBD. (If you'd like to use this let Dylan know and he'll create a license that works for us.)
