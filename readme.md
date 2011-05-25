@@ -1,12 +1,12 @@
 #jQuery.tooltip()
 Easy to use image-free HTML5 tooltips for jQuery 1.5.2+.
-Automatically positions to avoid going off the screen.
-Uses delgates and re-uses the tooltip chrome for extra optimization.
+* Automatically positions to avoid going off the screen.
+* Uses delgates and re-uses the tooltip chrome for extra optimization.
+* Works in all major browsers including IE6 and mobile.
 
 ##Credit
 
-Created by [Dylan Greene](http://http://github.com/dylang) at OPOWER.
-
+Created by [Dylan Greene](http://http://github.com/dylang) for OPOWER.
 
 ##HTML5 Data attribute usage
     <div data-tooltip=".example">
@@ -31,30 +31,7 @@ Put any of these attrbutes on a div, span, input, text area, etc to give it a to
         Side will make the tooltip show to the side.  The negative offset will make it overlap a little.
     <div>
 
-##Javascript Usage
-    $(triggerElement).tooltip({selector: '.example'});
 
-###jQuery API
-
-####Attributes
-
-    $(triggerElement).tooltip({attribute1: value1, attribute2: value2, etc..});
-
-* `selector` Optional selector or jquery object.
-* `html` Optional html if content is not used.
-* `style` Optional className.
-* `offset` Pixel distance from trigger
-
-Either selector or html is required, otherwise the tooltip will be empty.
-
-####Actions
-
-    $(triggerElement).tooltip({action: 'show|hide|enable|disable'});
-
-* `show`: Show a tooltip.
-* `hide`: Hide a tooltip.
-* `enable`: Enables a disabled tooltip.
-* `disable`: Disables the tooltip - hover and focus will not show the tooltip.
 
 ##Trigger Element
 
@@ -106,3 +83,28 @@ This works with every modern browser as well as IE6.
 * Firefox
 * Internet Explorer 6 - 10
 * iPhone/Android
+
+##Javascript Usage
+
+Of course you can also use this via javascript.  Using the jQuery plugin actually just adds the same data attributes
+you could have used above.
+
+####Attributes
+
+    $(triggerElement).tooltip({attribute1: value1, attribute2: value2, etc..});
+
+* `selector` Optional selector or jquery object.
+* `html` Optional html if content is not used.
+* `style` Optional className.
+* `offset` Pixel distance from trigger
+
+Either selector or html is required, otherwise the tooltip will be empty.
+
+####Actions
+
+    $(triggerElement).tooltip({action: 'show|hide|enable|disable'});
+
+* `show`: Show a tooltip.
+* `hide`: Hide a tooltip.
+* `enable`: Enables a disabled tooltip.
+* `disable`: Disables the tooltip - hover and focus will not show the tooltip.
