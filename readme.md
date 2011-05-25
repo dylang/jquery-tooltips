@@ -18,11 +18,11 @@ Created by [Dylan Greene](http://http://github.com/dylang) at OPOWER.
 
 Put any of these attrbutes on a div, span, input, text area, etc to give it a tooltip.
 
-`data-tooltip` This attribute is required. The value is an optional selector for the tip.
-`data-tooltip-html` Optional HTML - only used if data-tooltip has no value.
-`data-tooltip-style` Optional CSS class.  Defaults to a nice tip above.  `side` will show tips to the left or right of the element.
-`data-tooltip-disable` Disables the tooltip.
-`data-tooltip-offset` Pixel distance to show the tooltip from trigger. Defaults to 2px.
+* `data-tooltip` This attribute is required. The value is an optional selector for the tip.
+* `data-tooltip-html` Optional HTML - only used if data-tooltip has no value.
+* `data-tooltip-style` Optional CSS class.  Defaults to a nice tip above.  `side` will show tips to the left or right of the element.
+* `data-tooltip-disable` Disables the tooltip.
+* `data-tooltip-offset` Pixel distance to show the tooltip from trigger. Defaults to 2px.
 
 ##Another HTML5 Data attribute example
     <div data-tooltip data-tooltip-html="This is <strong>cool</strong>"
@@ -36,28 +36,60 @@ Put any of these attrbutes on a div, span, input, text area, etc to give it a to
 
 ###jQuery API
 
+    $(triggerElement).tooltip({attribute1: value1, attribute2: value2, etc..});
+
 ####Attributes
-`selector` Optional selector or jquery object.
-`html` Optional html if content is not used.
-`style` Optional className.
-`offset` Pixel distance from trigger
+
+* `selector` Optional selector or jquery object.
+* `html` Optional html if content is not used.
+* `style` Optional className.
+* `offset` Pixel distance from trigger
 
 ####Actions
-    // Show a tooltip, should never be needed
-    $(triggerElement).tooltip({action: 'show'});
 
-    // Hide a tooltip, should never be needed
-    $(triggerElement).tooltip({action: 'hide'});
+    $(triggerElement).tooltip({action: 'show|hide|enable|disable'});
 
-    // Enable/Disable the tooltip
-    $(triggerElement).tooltip({action: 'enable|disable'});
+* `show`: Show a tooltip.
+* `hide`: Hide a tooltip.
+* `enable`: Enables a disabled tooltip.
+* `disable`: Disables the tooltip - hover and focus will not show the tooltip.
 
 ##Trigger Element
 
-The trigger element is what triggers the tooltip to show.
-It will trigger the tooltip on `mouseenter` and `focus`.
-It will hide the tooltip on `mouseleave` and `blur` - unless the tooltip has `hover` or `focus`.
-The trigger element always gets the class `highlight` while the tooltip is visible.
+* The trigger element is what triggers the tooltip to show.
+* It will trigger the tooltip on `mouseenter` and `focus`.
+* It will hide the tooltip on `mouseleave` and `blur` - unless the tooltip itself has `mouseenter` or `focus`.
+* The trigger element always have the class `highlight` while the tooltip is visible.
+
+##Tooltip Content
+
+Tooltip content can come from within the trigger or elsewhere on the page.
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <link rel="Stylesheet" media="screen" href="jquery.tooltip.css" />
+    </head>
+    <body>
+
+        <!-- Tooltip is a child of trigger -->
+        <div data-tooltip=".tooltip">
+            I like tooltips.
+            <div class="tooltip hide">I'm tooltip content for my parent.</div>
+        </div>
+
+        <!-- Tooltip is somewhere else in the DOM -->
+        <div data-tooltip="#tooltipContent">I want a tooltip</div>
+        <div data-tooltip="#tooltipContent">I want the same tooltip</div>
+        <div id="tooltipContent" class="hide">I'm a shared tooltip</div>
+
+        <!-- Tooltip is inline -->
+        <div data-tooltip data-tooltip-html="I'm in the HTML">I have a tooltip.</div>
+
+        <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+        <script src="jquery.tooltip.js"></script>
+    </body>
+    </html>
 
 ##CSS
 
@@ -71,36 +103,6 @@ Works with every modern browser as well as IE6.
 * Firefox
 * Internet Explorer 6 - 10
 * iPhone/Android
-
-## Examples
-
-These three tooltips show how flexable the tooltip content can be.
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <link rel="Stylesheet" media="screen" href="jquery.tooltip.css" />
-    </head>
-    <body>
-
-        <!-- Tooltip is a child of trigger -->
-        <div data-tooltip=".tooltip">
-            I like tooltips.
-            <div class="tooltip hide">Child tooltip</div>
-        </div>
-
-        <!-- Tooltip is somewhere else in the dom -->
-        <div data-tooltip=".tooltip1">I want a tooltip</div>
-
-        <!-- Tooltip is inline -->
-        <div data-tooltip data-tooltip-html="Inline Tooltip">I have a tooltip.</div>
-
-        <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-        <script src="jquery.tooltip.js"></script>
-    </body>
-    </html>
-
-
 
 #License
 
